@@ -1,0 +1,46 @@
+﻿@using MVC.Models
+@{
+    Layout = null;
+    List<OrdenCompra> lista = (List<OrdenCompra>)ViewData["ListaOrdenCompra"];
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <title>Reporte Órdenes de Compra</title>
+</head>
+<body>
+    <div>
+        <table>
+            <thead>
+                <tr>
+                    <th>Codigo Compra</th>
+                    <th>Codigo Cliente</th>
+                </tr>
+            </thead>
+            <tbody>
+
+                @if (lista == null || lista.Count == 0)
+                {
+                    <tr>
+                        <td colspan="2">No existe información</td>
+                    </tr>
+                }
+                else
+                {
+                    foreach (OrdenCompra item in lista)
+                    {
+                        <tr>
+                            <td>@item.CodigoCompra</td>
+                            <td>@item.CodigoCliente</td>
+                        </tr>
+                    }
+                }
+            </tbody>
+        </table>
+        <div>@(lista == null ? 0 : lista.Count) Órdenes registradas</div>
+    </div>
+</body>
+</html>

@@ -18,6 +18,8 @@
                 <tr>
                     <th>Codigo Compra</th>
                     <th>Codigo Cliente</th>
+                    <th>Fecha Compra</th>
+                    <th>Fecha Estimada Entrega</th>
                 </tr>
             </thead>
             <tbody>
@@ -35,6 +37,8 @@
                         <tr>
                             <td>@item.CodigoCompra</td>
                             <td>@item.CodigoCliente</td>
+                            <td>@item.FechaCompra.ToString("dd/MM/yyyy")</td>
+                            <td>@item.FechaEstimadaEntrega.ToString("dd/MM/yyyy")</td>
                         </tr>
                     }
                 }
